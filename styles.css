@@ -1,0 +1,206 @@
+* {
+    margin: 5px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#main-screen {
+    color: aliceblue;
+    background-color: black;
+    width: 300px;
+    height: 100px;
+    display :flex;
+    justify-content: center;
+}
+
+#pts-time {
+    color: aliceblue;
+    background-color: black;
+    width: 250px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+#start-btn {
+    background-color: red;
+    color : aliceblue;
+}
+
+.not-clickable {
+    pointer-events: none;
+}
+
+#taupe-field {
+    height: 300px;
+    width: 300px;
+    border: solid 3px black;
+    background-color: greenyellow;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 15px;
+}
+
+#taupe {
+    height: 40px;
+    width: 25px;
+    border: solid 2px red;
+    background-color: brown;
+    place-self: center;
+    color: aliceblue;
+    font-size: 10%;
+    border-radius: 72% 28% 46% 54% / 87% 84% 16% 13% ;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin: 0;
+    position: relative;
+  animation-name: example;
+  animation-duration: 1s;
+}
+
+@keyframes example {
+    0%   {top:0px;}
+    100%  {top:10px;}
+    
+  }
+
+.mouse {
+    border-radius: 40%;
+    background-color: black;
+    height: 12px;
+    width: 9px;
+    margin: 0;
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.nose {
+    height: 7px;
+    width: 7px;
+    border-radius: 72% 28% 48% 52% / 44% 67% 33% 56% ;
+    background-color: pink;
+    margin: 0 0 4px 6px;
+}
+
+.tooth {
+    height: 3px;
+    width: 2px;
+    background-color: aliceblue;
+    margin: 0;
+    border: solid 1px black;
+}
+
+.taupe-up-a{
+    
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.taupe-up-b {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.taupe-up-c {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.taupe-up-d {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.taupe-up-e {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.taupe-up-f {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.taupe-up-g {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.taupe-up-h {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.taupe-up-i {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.taupe-up-j {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.taupe-up-k {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.taupe-up-l {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.taupe-up-m {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.taupe-up-n {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.taupe-up-o {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.taupe-up-p {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
