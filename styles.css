@@ -77,7 +77,7 @@
 }
 
 .nose {
-    height: 7px;
+    height: 5px;
     width: 7px;
     border-radius: 72% 28% 48% 52% / 44% 67% 33% 56% ;
     background-color: pink;
@@ -203,4 +203,30 @@
     grid-column-end: 5;
     grid-row-start: 4;
     grid-row-end: 5;
+}
+ 
+/* LAPIN */
+
+.lapin-up-a{
+    padding: 10px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.lapin-up-b {
+    padding: 10px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.lapin-up-c {
+    padding: 10px;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
