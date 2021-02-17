@@ -7,9 +7,13 @@
     color: aliceblue;
     background-color: black;
     width: 300px;
-    height: 100px;
+    height: 250px;
     display :flex;
     justify-content: center;
+}
+
+#easy {
+    
 }
 
 #pts-time {
@@ -59,6 +63,22 @@
   animation-duration: 1s;
 }
 
+/* #lapin {
+    height: 30px;
+    width: 25px;
+    border: solid 2px pink;
+    background-color: whitesmoke;
+    place-self: center;
+    color: turquoise;
+    font-size: 10%;
+    border-radius: 30% 70% 50% 50% / 33% 21% 79% 67% ;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin: 0;
+    position: relative;
+} */
+
 @keyframes example {
     0%   {top:0px;}
     100%  {top:10px;}
@@ -97,7 +117,21 @@
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
-    grid-row-end: 2;
+    grid-row-end: 2;height: 40px;
+    width: 25px;
+    border: solid 2px red;
+    background-color: brown;
+    place-self: center;
+    color: aliceblue;
+    font-size: 10%;
+    border-radius: 72% 28% 46% 54% / 87% 84% 16% 13% ;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin: 0;
+    position: relative;
+  animation-name: example;
+  animation-duration: 1s;
 }
 
 .taupe-up-b {

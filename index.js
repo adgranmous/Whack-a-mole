@@ -1,6 +1,7 @@
 const start = document.getElementById('start-btn');
 let field = document.getElementById('taupe-field');
 let taupe = document.getElementById('taupe');
+let lapin = document.getElementById('lapin');
 let points = document.getElementById('pts');
 let timer = document.getElementById('timer');
 let mainScreen = document.querySelector('.display-screen');
@@ -9,16 +10,52 @@ let mainScreen = document.querySelector('.display-screen');
 // console.log(lapin);
 
 // set the time of the game, also remember to also change the "secs" in section timer
-let gameTime = 30000;
+let gameTime = 5000;
 
-// classes and interval 
+// classes and interval for the mole
 let classes = ['lapin-up-a','lapin-up-b','lapin-up-c','taupe-up-a', 'taupe-up-b', 'taupe-up-c', 'taupe-up-d', 'taupe-up-e', 'taupe-up-f', 'taupe-up-g', 'taupe-up-h', 'taupe-up-i', 'taupe-up-j', 'taupe-up-k', 'taupe-up-l', 'taupe-up-m', 'taupe-up-n', 'taupe-up-o', 'taupe-up-p'];
-let popIntervals = ["550", "650", "720","760", "800", "820", "840", "900", "1000", "1200", "1300"];
+let popIntervals = [];
 
+let lapinPopIntervals = ["2500","3000","3200","4000"];
 
 // make the elements not clickable before the game start
 taupe.classList.toggle('not-clickable');
 field.classList.toggle('not-clickable');
+start.classList.toggle('not-clickable');
+
+// difficulty chosen at the begining of the game
+let easy = document.getElementById('easy');
+let normal = document.getElementById('normal');
+let expert = document.getElementById('expert');
+
+
+function easyF() {
+    popIntervals = ["2000","900","1100","1000","1500","950"];
+    mainScreen.innerHTML = 'Press "START" to play !';
+    start.classList.toggle('not-clickable');
+    console.log(popIntervals);
+}
+
+function normalF() {
+    popIntervals = ["720","760", "800", "820", "840", "900", "1000", "1200", "1300"];
+    mainScreen.innerHTML = 'Press "START" to play !';
+    start.classList.toggle('not-clickable');
+    console.log(popIntervals);
+}
+
+function expertF() {
+    popIntervals = ["550","600","800","850","700","650","750"];
+    mainScreen.innerHTML = 'Press "START" to play !';
+    start.classList.toggle('not-clickable');
+    console.log(popIntervals);
+}
+
+console.log(popIntervals);
+
+easy.addEventListener('click', easyF);
+normal.addEventListener('click', normalF);
+expert.addEventListener('click', expertF);
+
 
 
 //START THE GAME
@@ -28,11 +65,13 @@ function startGame() {
     taupe.classList.toggle('not-clickable');
     field.classList.toggle('not-clickable');
 
-    // Reset the points
+    // Reset the points and display
     points.innerHTML = `POINT(S): 0`;
     pts = 0;
+    mainScreen.innerHTML = 'Whack them all !'
 
     let randomInterval = Math.floor( Math.random() * popIntervals.length);
+    let lapinRandomInterval = Math.floor( Math.random() * lapinPopIntervals.length);
     
     let taupePop = setInterval(() =>  {
         
@@ -46,8 +85,22 @@ function startGame() {
         
     },popIntervals[randomInterval]-1);
 
+    // let lapinPop = setInterval(() =>  {
+        
+    //     let randomNumber = Math.floor( Math.random() * classes.length);
+
+    //     // Reset the classlist every interval
+    //     // lapin.classList = [];
+        
+    //     // switch classlist every interval (position on the grid)
+        
+    //     lapin.classList.toggle(`${classes[randomNumber]}`);
+        
+    // },lapinPopIntervals[lapinRandomInterval]-1);
+
     setTimeout(() => {
         clearInterval(taupePop);
+        // clearInterval(lapinPop);
     }, gameTime);
 }
 
@@ -67,7 +120,7 @@ function loosePoints() {
 //TIMER
 function timerF() {
     //time on timer display
-    let secs = 5;   
+    let secs = 30;   
 
     // running time on display
     let timerInterval = setInterval(() => {  
@@ -108,12 +161,14 @@ function endGame() {
         } else if (pts === 13) {
             mainScreen.innerHTML = `Bad Luck ${pts} ! Press "START" to play again !`;
         } else if (pts === 221) {
-            mainScreen.innerHTML = `${pts}B ! Press "START" to play again !`;
+            mainScreen.innerHTML = `${pts}B Baker St. Press "START" to play again !`;
         } else if (pts === 0) {
             mainScreen.innerHTML = `GAME OVER ! You scored ${pts}, did you really understand the rules ?? Press "START" to play again !`;
-        }else {
+        } else if (pts === 666) {
+            mainScreen.innerHTML = `GAME OVER ! You scored ${pts}, that's a HELL of a score ! Press "START" to play again !`;
+        } else {
             mainScreen.innerHTML = `GAME OVER ! you scored ${pts}pts ! Press "START" to play again !`;
-        }
+        } 
     }, gameTime);
 }
 
