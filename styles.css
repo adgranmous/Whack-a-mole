@@ -9,15 +9,27 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0;
+    background-color: yellowgreen;
 }
 
 #main-screen {
     color: aliceblue;
     background-color: black;
     width: 60%;
-    height: 250px;
+    height: 25%;
+    min-height: 190px;
     display :flex;
     justify-content: center;
+    border: solid 2px whitesmoke;
+}
+
+.display-screen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
 }
 
 #pts-time {
@@ -27,11 +39,23 @@ body{
     height: 50px;
     display: flex;
     flex-direction: column;
+    border: solid 2px whitesmoke;
+}
+
+.btn {
+border: white solid 1px;
+height: 30px;
+padding: 0px;
 }
 
 #start-btn {
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.822);
     color : aliceblue;
+    width:  90px;
+}
+
+#start-btn:hover {
+    background-color: rgb(253, 25, 25);
 }
 
 .not-visible {
@@ -41,6 +65,43 @@ body{
 .not-clickable {
     pointer-events: none;
 }
+
+#mode-btn{
+background-color: whitesmoke;
+color: black;
+width: 250px;
+border: black solid 2px;
+}
+
+#mode-btn:hover{
+    background-color: black;
+    color: whitesmoke;
+    }
+
+#easy {
+background-color: rgba(127, 206, 8, 0.651);
+width: 70%;
+}
+
+#easy:hover {
+    background-color: rgb(127, 206, 8);
+    }
+
+#normal {
+background-color: rgba(73, 119, 219, 0.582);
+width: 60%;
+}
+#normal:hover {
+    background-color: rgb(73, 119, 219);
+    }
+
+#expert {
+background-color: rgba(199, 57, 57, 0.616);
+width: 50%;
+}
+#expert:hover {
+    background-color: rgb(199, 57, 57);
+    }
 
 #taupe-field {
     height: 300px;
@@ -54,8 +115,8 @@ body{
 }
 
 .anim-taupe {
-    height: 80px;
-    width: 80px;
+    height: 60px;
+    width: 60px;
     margin: 0;
     background-image: url(./images/taupe-gif.gif);
     margin: 0;
@@ -63,8 +124,8 @@ body{
 }
 
 .cry-taupe {
-    height: 80px;
-    width: 80px;
+    height: 60px;
+    width: 60px;
     background-image: url(./images/cry-taupe.gif);
     margin: 0;
     background-size: 100%;
