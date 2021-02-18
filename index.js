@@ -1,4 +1,5 @@
 const start = document.getElementById('start-btn');
+let modeBtn = document.getElementById('mode-btn');
 let field = document.getElementById('taupe-field');
 let taupe = document.getElementById('taupe');
 let lapin = document.getElementById('lapin');
@@ -10,10 +11,10 @@ let mainScreen = document.querySelector('.display-screen');
 // console.log(lapin);
 
 // set the time of the game, also remember to also change the "secs" in section timer
-let gameTime = 5000;
+let gameTime = 30000;
 
 // classes and interval for the mole
-let classes = ['lapin-up-a','lapin-up-b','lapin-up-c','taupe-up-a', 'taupe-up-b', 'taupe-up-c', 'taupe-up-d', 'taupe-up-e', 'taupe-up-f', 'taupe-up-g', 'taupe-up-h', 'taupe-up-i', 'taupe-up-j', 'taupe-up-k', 'taupe-up-l', 'taupe-up-m', 'taupe-up-n', 'taupe-up-o', 'taupe-up-p'];
+let classes = ['taupe-up-a', 'taupe-up-b', 'taupe-up-c', 'taupe-up-d', 'taupe-up-e', 'taupe-up-f', 'taupe-up-g', 'taupe-up-h', 'taupe-up-i', 'taupe-up-j', 'taupe-up-k', 'taupe-up-l', 'taupe-up-m', 'taupe-up-n', 'taupe-up-o', 'taupe-up-p'];
 let popIntervals = [];
 
 let lapinPopIntervals = ["2500","3000","3200","4000"];
@@ -33,29 +34,26 @@ function easyF() {
     popIntervals = ["2000","900","1100","1000","1500","950"];
     mainScreen.innerHTML = 'Press "START" to play !';
     start.classList.toggle('not-clickable');
-    console.log(popIntervals);
 }
 
 function normalF() {
     popIntervals = ["720","760", "800", "820", "840", "900", "1000", "1200", "1300"];
     mainScreen.innerHTML = 'Press "START" to play !';
     start.classList.toggle('not-clickable');
-    console.log(popIntervals);
 }
 
 function expertF() {
     popIntervals = ["550","600","800","850","700","650","750"];
     mainScreen.innerHTML = 'Press "START" to play !';
     start.classList.toggle('not-clickable');
-    console.log(popIntervals);
 }
 
-console.log(popIntervals);
 
 easy.addEventListener('click', easyF);
 normal.addEventListener('click', normalF);
 expert.addEventListener('click', expertF);
 
+modeBtn.addEventListener
 
 
 //START THE GAME
@@ -71,36 +69,23 @@ function startGame() {
     mainScreen.innerHTML = 'Whack them all !'
 
     let randomInterval = Math.floor( Math.random() * popIntervals.length);
-    let lapinRandomInterval = Math.floor( Math.random() * lapinPopIntervals.length);
+    // let lapinRandomInterval = Math.floor( Math.random() * lapinPopIntervals.length);
     
     let taupePop = setInterval(() =>  {
         
         let randomNumber = Math.floor( Math.random() * classes.length);
+        // maTaupe.classList.toggle('anim-taupe');
+        // maTaupe.classList.toggle('cry-taupe');
 
         // Reset the classlist every interval
         taupe.classList = [];
-        
         // switch classlist every interval (position on the grid)
         taupe.classList.toggle(`${classes[randomNumber]}`);
         
     },popIntervals[randomInterval]-1);
 
-    // let lapinPop = setInterval(() =>  {
-        
-    //     let randomNumber = Math.floor( Math.random() * classes.length);
-
-    //     // Reset the classlist every interval
-    //     // lapin.classList = [];
-        
-    //     // switch classlist every interval (position on the grid)
-        
-    //     lapin.classList.toggle(`${classes[randomNumber]}`);
-        
-    // },lapinPopIntervals[lapinRandomInterval]-1);
-
     setTimeout(() => {
         clearInterval(taupePop);
-        // clearInterval(lapinPop);
     }, gameTime);
 }
 
@@ -115,6 +100,24 @@ function addPoints() {
 function loosePoints() {
     pts -=2;
     points.innerHTML = `POINT(S): ${pts}`;
+}
+
+
+// HIT the taupe
+let movingTaupe = document.getElementById('anim-taupe');
+let cryTaupe = document.getElementById('cry-taupe');
+let maTaupe= document.getElementById('laTaupe');
+
+console.log(movingTaupe);
+
+function hit() {
+  maTaupe.classList.toggle('anim-taupe');
+  maTaupe.classList.toggle('cry-taupe');
+  setTimeout(() => {
+    maTaupe.classList.toggle('anim-taupe');
+    maTaupe.classList.toggle('cry-taupe');
+  }, 300);
+
 }
 
 //TIMER
@@ -134,6 +137,11 @@ function timerF() {
     setTimeout(() => {
         clearInterval(timerInterval);
     }, gameTime);
+}
+
+// change difficulty
+function refresh() {
+    window.location.reload();
 }
 
 //ENDGAME
@@ -182,7 +190,11 @@ start.addEventListener("click", () => {
 });
 
 // points if get or miss the mole
-taupe.addEventListener("click", addPoints);
+taupe.addEventListener("click", () => {
+    addPoints();
+    hit();
+});
+
+modeBtn.addEventListener('click',refresh);
 field.addEventListener('click', loosePoints);
 
-console.log();

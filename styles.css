@@ -3,17 +3,21 @@
     font-family: 'Press Start 2P', cursive;
 }
 
+body{
+    background-image: url(./images/field.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #main-screen {
     color: aliceblue;
     background-color: black;
-    width: 300px;
+    width: 60%;
     height: 250px;
     display :flex;
     justify-content: center;
-}
-
-#easy {
-    
 }
 
 #pts-time {
@@ -28,6 +32,10 @@
 #start-btn {
     background-color: red;
     color : aliceblue;
+}
+
+.not-visible {
+    visibility: hidden;
 }
 
 .not-clickable {
@@ -45,71 +53,21 @@
     grid-gap: 15px;
 }
 
-#taupe {
-    height: 40px;
-    width: 25px;
-    border: solid 2px red;
-    background-color: brown;
-    place-self: center;
-    color: aliceblue;
-    font-size: 10%;
-    border-radius: 72% 28% 46% 54% / 87% 84% 16% 13% ;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
+.anim-taupe {
+    height: 80px;
+    width: 80px;
     margin: 0;
-    position: relative;
-  animation-name: example;
-  animation-duration: 1s;
+    background-image: url(./images/taupe-gif.gif);
+    margin: 0;
+    background-size: 100%;
 }
 
-/* #lapin {
-    height: 30px;
-    width: 25px;
-    border: solid 2px pink;
-    background-color: whitesmoke;
-    place-self: center;
-    color: turquoise;
-    font-size: 10%;
-    border-radius: 30% 70% 50% 50% / 33% 21% 79% 67% ;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
+.cry-taupe {
+    height: 80px;
+    width: 80px;
+    background-image: url(./images/cry-taupe.gif);
     margin: 0;
-    position: relative;
-} */
-
-@keyframes example {
-    0%   {top:0px;}
-    100%  {top:10px;}
-    
-  }
-
-.mouse {
-    border-radius: 40%;
-    background-color: black;
-    height: 12px;
-    width: 9px;
-    margin: 0;
-    margin-left: 5px;
-    display: flex;
-    justify-content: center;
-}
-
-.nose {
-    height: 5px;
-    width: 7px;
-    border-radius: 72% 28% 48% 52% / 44% 67% 33% 56% ;
-    background-color: pink;
-    margin: 0 0 4px 6px;
-}
-
-.tooth {
-    height: 3px;
-    width: 2px;
-    background-color: aliceblue;
-    margin: 0;
-    border: solid 1px black;
+    background-size: 100%;
 }
 
 .taupe-up-a{
@@ -118,20 +76,6 @@
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 2;height: 40px;
-    width: 25px;
-    border: solid 2px red;
-    background-color: brown;
-    place-self: center;
-    color: aliceblue;
-    font-size: 10%;
-    border-radius: 72% 28% 46% 54% / 87% 84% 16% 13% ;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    margin: 0;
-    position: relative;
-  animation-name: example;
-  animation-duration: 1s;
 }
 
 .taupe-up-b {
@@ -237,30 +181,4 @@
     grid-column-end: 5;
     grid-row-start: 4;
     grid-row-end: 5;
-}
- 
-/* LAPIN */
-
-.lapin-up-a{
-    padding: 10px;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
-}
-
-.lapin-up-b {
-    padding: 10px;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
-}
-
-.lapin-up-c {
-    padding: 10px;
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 2;
 }
