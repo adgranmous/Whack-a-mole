@@ -7,6 +7,20 @@ let points = document.getElementById('pts');
 let timer = document.getElementById('timer');
 let mainScreen = document.querySelector('.display-screen');
 
+var mainTheme = new Audio('./musique/main.mp3');
+var cri1 = new Audio('./musique/cri-taupe.mp3');
+var cri2 = new Audio('./musique/cri-taupe2.mp3');
+var cri3 = new Audio('./musique/cri-taupe3.mp3');
+var miss = new Audio('./musique/missEffect.mp3');
+cri1.volume = 0.1;
+cri2.volume = 0.1;
+cri3.volume = 0.1;
+miss.volume = 0.1;
+mainTheme.volume = 0.05;
+
+mainTheme.play();
+
+
 let taupe2 = document.getElementById('taupe2');
 
 // set the time of the game, also remember to also change the "secs" in section timer
@@ -70,8 +84,7 @@ function startGame() {
     mainScreen.innerHTML = 'Whack them all !'
 
     let randomInterval = Math.floor( Math.random() * popIntervals.length);
-    // let lapinRandomInterval = Math.floor( Math.random() * lapinPopIntervals.length);
-    
+
     let taupePop = setInterval(() =>  {
         
         let randomNumber = Math.floor( Math.random() * classes.length);
@@ -203,7 +216,7 @@ function endGame() {
         } else if (pts === 666) {
             mainScreen.innerHTML = `GAME OVER ! You scored ${pts}, that's a HELL of a score ! Press "START" to play again !`;
         } else {
-            mainScreen.innerHTML = `GAME OVER ! you scored ${pts}pts ! Press "START" to play again !`;
+            mainScreen.innerHTML = `GAME OVER ! WOOOW ! You scored ${pts}pts ! Press "START" to play again !`;
         } 
     }, gameTime);
 }
@@ -221,14 +234,18 @@ start.addEventListener("click", () => {
 taupe.addEventListener("click", () => {
     addPoints();
     hit1();
+    cri1.play();
 });
 
 taupe2.addEventListener("click", () => {
     addPoints();
     hit2();
+    cri2.play();
 });
 
 modeBtn.addEventListener('click',refresh);
-field.addEventListener('click', loosePoints);
+field.addEventListener('click', () => {
+    loosePoints();
+});
 
 console.log();
