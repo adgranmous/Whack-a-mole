@@ -12,6 +12,7 @@
     <script type="module" src="./index.js"></script>
 </head>
 <body>
+
     <header id="main-screen" >
         <div class="display-screen">
             <h2>WHACK A MOLE 1.0.2</h2>
@@ -20,22 +21,30 @@
             <button id="normal" type="button" class="btn">Already whacked a few</button>
             <button id="expert" type="button" class="btn">Got my own hammer</button>
         </div>
-    </header>    
+    </header>   
 
+    <div id="pts-time">
+        <div id="pts">POINT(S): 0</div>
+        <div id="timer">TIMER : 30</div>
+    </div>
+
+    <div>
+        <button id="mode-btn" class="btn" type="button">Change difficulty</button>
+    </div>
     <button id="start-btn" class="btn" type="button">START</button>
     
     <div id="taupe-field">
         <div id="taupe">
             <div id="laTaupe" class="anim-taupe"></div>
         </div>
+        <div id="taupe2">
+            <div id="laTaupe2" class="anim-taupe2"></div>
+        </div>
+
     </div>
-    <div id="pts-time">
-        <div id="pts">POINT(S): 0</div>
-        <div id="timer">TIMER : 30</div>
-    </div>
-    <div>
-        <button id="mode-btn" class="btn" type="button">Change difficulty</button>
-    </div>
+
+
     <div id="leader-board"></div>
+
 </body>
 </html>

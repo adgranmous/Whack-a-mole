@@ -6,9 +6,8 @@ let lapin = document.getElementById('lapin');
 let points = document.getElementById('pts');
 let timer = document.getElementById('timer');
 let mainScreen = document.querySelector('.display-screen');
-// let lapin = document.
 
-// console.log(lapin);
+let taupe2 = document.getElementById('taupe2');
 
 // set the time of the game, also remember to also change the "secs" in section timer
 let gameTime = 30000;
@@ -21,6 +20,7 @@ let lapinPopIntervals = ["2500","3000","3200","4000"];
 
 // make the elements not clickable before the game start
 taupe.classList.toggle('not-clickable');
+taupe2.classList.toggle('not-clickable');
 field.classList.toggle('not-clickable');
 start.classList.toggle('not-clickable');
 
@@ -61,6 +61,7 @@ function startGame() {
     // define what is clickable or not during the game
     start.classList.toggle('not-clickable');
     taupe.classList.toggle('not-clickable');
+    taupe2.classList.toggle('not-clickable');
     field.classList.toggle('not-clickable');
 
     // Reset the points and display
@@ -74,18 +75,32 @@ function startGame() {
     let taupePop = setInterval(() =>  {
         
         let randomNumber = Math.floor( Math.random() * classes.length);
-        // maTaupe.classList.toggle('anim-taupe');
-        // maTaupe.classList.toggle('cry-taupe');
 
         // Reset the classlist every interval
         taupe.classList = [];
         // switch classlist every interval (position on the grid)
         taupe.classList.toggle(`${classes[randomNumber]}`);
-        
+
     },popIntervals[randomInterval]-1);
+
+    let taupe2Pop = setInterval(() =>  {
+        
+        let randomNumber = Math.floor( Math.random() * classes.length);
+
+        // Reset the classlist every interval
+        taupe2.classList = [];
+    
+        // switch classlist every interval (position on the grid)
+        taupe2.classList.toggle(`${classes[randomNumber]}`);
+
+    },popIntervals[randomInterval]);
 
     setTimeout(() => {
         clearInterval(taupePop);
+    }, gameTime);
+
+    setTimeout(() => {
+        clearInterval(taupe2Pop);
     }, gameTime);
 }
 
@@ -105,20 +120,32 @@ function loosePoints() {
 
 // HIT the taupe
 let movingTaupe = document.getElementById('anim-taupe');
+let movingTaupe2 = document.getElementById('anim-taupe2');
 let cryTaupe = document.getElementById('cry-taupe');
+let cryTaupe2 = document.getElementById('cry-taupe2');
 let maTaupe= document.getElementById('laTaupe');
+let maTaupe2= document.getElementById('laTaupe2');
 
-console.log(movingTaupe);
-
-function hit() {
+function hit1() {
   maTaupe.classList.toggle('anim-taupe');
   maTaupe.classList.toggle('cry-taupe');
+
   setTimeout(() => {
     maTaupe.classList.toggle('anim-taupe');
     maTaupe.classList.toggle('cry-taupe');
   }, 300);
-
 }
+
+function hit2() {
+    maTaupe2.classList.toggle('anim-taupe2');
+    maTaupe2.classList.toggle('cry-taupe2');
+  
+    setTimeout(() => {
+      maTaupe2.classList.toggle('anim-taupe2');
+      maTaupe2.classList.toggle('cry-taupe2');
+    }, 300);
+  
+  }
 
 //TIMER
 function timerF() {
@@ -149,6 +176,7 @@ function endGame() {
     setTimeout(() => {
         // what is clickable or not
         taupe.classList.toggle('not-clickable');
+        taupe2.classList.toggle('not-clickable');
         field.classList.toggle('not-clickable');
         start.classList.toggle('not-clickable');
 
@@ -192,9 +220,15 @@ start.addEventListener("click", () => {
 // points if get or miss the mole
 taupe.addEventListener("click", () => {
     addPoints();
-    hit();
+    hit1();
+});
+
+taupe2.addEventListener("click", () => {
+    addPoints();
+    hit2();
 });
 
 modeBtn.addEventListener('click',refresh);
 field.addEventListener('click', loosePoints);
 
+console.log();

@@ -10,7 +10,7 @@ body{
     flex-direction: column;
     align-items: center;
     margin: 0;
-    background-color: yellowgreen;
+    background-position: bottom;
 }
 
 #main-screen {
@@ -22,6 +22,7 @@ body{
     display :flex;
     justify-content: center;
     border: solid 2px whitesmoke;
+    line-height: 150%;
 }
 
 .display-screen{
@@ -73,6 +74,7 @@ width: 250px;
 border: black solid 2px;
 }
 
+
 #mode-btn:hover{
     background-color: black;
     color: whitesmoke;
@@ -104,29 +106,47 @@ width: 50%;
     }
 
 #taupe-field {
-    height: 300px;
-    width: 300px;
-    border: solid 3px black;
-    background-color: greenyellow;
+    height: 8%;
+    width: 70%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-gap: 15px;
+    margin-top: 120px;
+    bottom: 0;
 }
 
 .anim-taupe {
-    height: 60px;
-    width: 60px;
+    height: 75px;
+    width: 75px;
     margin: 0;
     background-image: url(./images/taupe-gif.gif);
     margin: 0;
     background-size: 100%;
 }
 
+.anim-taupe2 {
+    height: 75px;
+    width: 75px;
+    margin: 0;
+    background-image: url(./images/taupeglass.gif);
+    margin: 0;
+    background-size: 100%;
+}
+
+
 .cry-taupe {
-    height: 60px;
-    width: 60px;
+    height: 75px;
+    width: 75px;
     background-image: url(./images/cry-taupe.gif);
+    margin: 0;
+    background-size: 100%;
+}
+
+.cry-taupe2 {
+    height: 75px;
+    width: 75px;
+    background-image: url(./images/crytaupeglass.gif);
     margin: 0;
     background-size: 100%;
 }
@@ -136,7 +156,7 @@ width: 50%;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
-    grid-row-end: 2;height: 40px;
+    grid-row-end: 2;
 }
 
 .taupe-up-b {
@@ -161,85 +181,85 @@ width: 50%;
 }
 
 .taupe-up-e {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 
 .taupe-up-f {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-column-start: 6;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 
 .taupe-up-g {
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-column-start: 7;
+    grid-column-end: 8;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 
 .taupe-up-h {
-    grid-column-start: 4;
-    grid-column-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 3;
 }
 
 .taupe-up-i {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 3;
-    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
 
 .taupe-up-j {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 3;
-    grid-row-end: 4;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
 
 .taupe-up-k {
-    grid-column-start: 3;
-    grid-column-end: 4;
+    grid-column-start: 4;
+    grid-column-end: 5;
     grid-row-start: 3;
-    grid-row-end: 4;
+    grid-row-end: 2;
 }
 
 .taupe-up-l {
-    grid-column-start: 4;
-    grid-column-end: 5;
-    grid-row-start: 3;
-    grid-row-end: 4;
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
 
 .taupe-up-m {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 4;
-    grid-row-end: 5;
+    grid-column-start: 6;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
 
 .taupe-up-n {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 4;
-    grid-row-end: 5;
+    grid-column-start: 7;
+    grid-column-end: 8;
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
 
 .taupe-up-o {
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 4;
-    grid-row-end: 5;
+    grid-column-start: 8;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 
 .taupe-up-p {
-    grid-column-start: 4;
-    grid-column-end: 5;
-    grid-row-start: 4;
-    grid-row-end: 5;
+    grid-column-start: 8;
+    grid-column-end: 9;
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
