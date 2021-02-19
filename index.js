@@ -20,7 +20,6 @@ mainTheme.volume = 0.05;
 
 mainTheme.play();
 
-
 let taupe2 = document.getElementById('taupe2');
 
 // set the time of the game, also remember to also change the "secs" in section timer
@@ -48,18 +47,21 @@ function easyF() {
     popIntervals = ["2000","900","1100","1000","1500","950"];
     mainScreen.innerHTML = 'Press "START" to play !';
     start.classList.toggle('not-clickable');
+    mainTheme.play();
 }
 
 function normalF() {
     popIntervals = ["720","760", "800", "820", "840", "900", "1000", "1200", "1300"];
     mainScreen.innerHTML = 'Press "START" to play !';
     start.classList.toggle('not-clickable');
+    mainTheme.play();
 }
 
 function expertF() {
     popIntervals = ["550","600","800","850","700","650","750"];
     mainScreen.innerHTML = 'Press "START" to play !';
     start.classList.toggle('not-clickable');
+    mainTheme.play();
 }
 
 
