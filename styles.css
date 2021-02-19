@@ -4,13 +4,15 @@
 }
 
 body{
-    background-image: url(./images/field2.0.png);
+    background-image: url(./images/field.png);
     background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0;
     background-position: bottom;
+    background-repeat: no-repeat;
+    background-color: #7BD434;
 }
 
 #main-screen {
@@ -112,8 +114,7 @@ width: 50%;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-gap: 15px;
-    margin-top: 150px;
-    bottom: 0;
+    margin-top: 100px;
 }
 
 #taupe-field:hover {
